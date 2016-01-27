@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 body {
   background-color: $theme-color-grey-light;
   font-family: "Open Sans", "Helvetica", "Arial", sans-serif;

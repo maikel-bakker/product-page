@@ -20,14 +20,29 @@ module.exports = function(grunt){
                     require('autoprefixer')({browsers: ['last 5 versions', 'ie 8', 'ie 9']}), // add vendor prefixes
                 ]
             },
-            dist: {
+            dev: {
                 src: './css/*.css'
+            }
+        },
+        uglify: {
+            dev: {
+                options: {
+                    beautify: true,
+                    mangle: false
+                },
+                files: {
+                    'js/main.js': ['js/plugins/*.js', 'js/core.js']
+                }
             }
         },
         watch: {
             sass: {
                 files: '**/*.scss',
                 tasks: ['sass', 'postcss']
+            },
+            uglify: {
+                files: ['js/plugins/*.js', 'js/core.js'],
+                tasks: ['uglify']
             }
         },
         connect: {
@@ -44,6 +59,6 @@ module.exports = function(grunt){
         }
     });
 
-    grunt.registerTask('default', ['sass', 'postcss', 'connect', 'watch']);
+    grunt.registerTask('default', ['sass', 'postcss', 'uglify', 'connect', 'watch']);
 
 };

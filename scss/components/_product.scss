@@ -17,19 +17,8 @@
     overflow: hidden;
   }
 
-  &__images {
-  }
-
-  &__details {
-  }
-
-  &__image-big {
-    text-align: center;
-    margin: 15px;
-
-    img {
-      max-width: 100%;
-    }
+  &-image-big {
+    @include image-square-container();
   }
 
   &-thumbnails {
@@ -37,22 +26,24 @@
     margin: 0 (-$col-padding);
     padding: 5px;
     overflow: hidden;
-    background-color: #eeeeee;
+    //background-color: #eeeeee;
 
     &__item {
       @include col-3();
       padding: 5px;
     }
     
-    &__item-link {
+    &-item-link {
       display: block;
-      padding: $col-padding;
+      //padding: $col-padding;
       background: white;
       opacity: 0.7;
       box-shadow: 0px 0px 3px rgba(black, 0.1);
       transition-property: opacity, border;
       transition-duration: 0.3s;
       transition-timing-function: ease;
+      border: 1px solid $theme-color-border;
+      @include image-square-container($padding: 15%);
 
       &:hover {
         opacity: 1;
@@ -61,16 +52,6 @@
       &--active {
         opacity: 1;
         border: 1px solid $theme-color-orange;
-      }
-    }
-
-    &__img {
-      display: block;
-      text-align: center;
-      margin: 0;
-
-      img {
-        max-width: 100%;
       }
     }
   }
@@ -86,3 +67,28 @@
     font-style: italic;
   }
 }
+
+//========================================================================================
+//If browser supports CSS Transforms
+//========================================================================================
+
+.csstransforms {
+  .product-thumbnails-item-link__img,
+  .product-image-big__img
+  {
+    margin: 50% auto 0;
+    transform: translateY(-50%);
+  }
+}
+
+//========================================================================================
+//Breakpoint small
+//========================================================================================
+@include breakpoint(sm) {
+  .product {
+    &__images, &__details {
+      @include col-6();
+    }
+  }
+}
+
