@@ -1,0 +1,28 @@
+@import "../settings/vars";
+@import "../settings/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+
+button:focus {
+  outline:0;
+}
+
+body {
+  background-color: $theme-color-grey-light;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  color: #666666;
+  
+  &.no-scroll {
+    overflow: hidden;
+  }
+}

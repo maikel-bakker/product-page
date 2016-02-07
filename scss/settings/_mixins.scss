@@ -1,0 +1,219 @@
+@import "vars";
+
+//Breakpoints
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: $screen-xs-max) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: $screen-sm-min) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: $screen-md-min) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: $screen-lg-min) { @content; }
+  }
+}
+
+//Grid
+@mixin row($overflow: hidden) {
+  margin-left: -$col-padding;
+  margin-right: -$col-padding;
+  overflow: $overflow;
+}
+
+@mixin container($overflow: hidden, $padding: $col-padding) {
+  max-width: $container-max-width;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: $overflow;
+}
+
+@mixin col {
+  display: block;
+  float: left;
+  padding-left: $col-padding;
+  padding-right: $col-padding;
+}
+
+@mixin col-1 {
+  @include col;
+  width: $col-1-width;
+}
+
+@mixin col-2 {
+  @include col;
+  width: $col-2-width;
+}
+
+@mixin col-3 {
+  @include col;
+  width: $col-3-width;
+}
+
+@mixin col-4 {
+  @include col;
+  width: $col-4-width;
+}
+
+@mixin col-5 {
+  @include col;
+  width: $col-5-width;
+}
+
+@mixin col-6 {
+  @include col;
+  width: $col-6-width;
+}
+
+@mixin col-7 {
+  @include col;
+  width: $col-7-width
+}
+
+@mixin col-8 {
+  @include col;
+  width: $col-8-width;
+}
+
+@mixin col-9 {
+  @include col;
+  width: $col-9-width;
+}
+
+@mixin col-10 {
+  @include col;
+  width: $col-10-width;
+}
+
+@mixin col-11 {
+  @include col;
+  width: $col-11-width;
+}
+
+@mixin col-12 {
+  @include col;
+  width: $col-12-width;
+}
+
+@mixin image-square-container($size: 100%, $padding: 20px) {
+  position: relative;
+  width: $size;
+  padding-bottom: $size;
+  text-align: center;
+
+  &__figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: $padding;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@mixin btn(
+  $font-size: 14px,
+  $icon-font-size: 1.429em,
+  $color: white,
+  $bg-color: $theme-color-red,
+  $height: 50px,
+  $line-height: $height,
+  $hover-bg-color: lighten($theme-color-red, 5%),
+  $hover-color: white,
+  $border: none,
+  $padding: 0 20px)
+  {
+  background-color: $bg-color;
+  color: $color;
+  font-size: $font-size;
+  text-transform: uppercase;
+  height: $height;
+  line-height: $line-height;
+  text-align: center;
+  font-weight: 700;
+  transition-property: color, background-color, border-color;
+  transition-duration: $theme-transition-duration;
+  transition-timing-function: $theme-transition-easing;
+  padding: $padding;
+  border: $border;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $hover-color;
+  }
+
+  &__icon, &__title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__icon {
+    font-size: $icon-font-size;
+  }
+
+  &__title {
+    padding-left: 10px;
+  }
+}
+
+@mixin btn-outline($line-height: 46px, $font-size: 14px, $padding: 0 20px) {
+  @include btn(
+    $font-size: $font-size,
+    $bg-color: white,
+    $color: $theme-color-border,
+    $line-height: $line-height,
+    $hover-bg-color: white,
+    $hover-color: $theme-color-grey,
+    $border: 2px solid $theme-color-border,
+    $padding: $padding
+  );
+}
+
+@mixin delivery-text() {
+  font-size: 12px;
+  font-weight: 600;
+  color: $theme-color-green;
+}
+
+@mixin price-sale($font-size: 24px) {
+  font-size: $font-size;
+
+  &__price {
+    font-weight: bold;
+    color: black;
+
+    &--sale {
+      font-size: 0.583em;
+      font-weight: normal;
+      color: $theme-color-grey;
+      text-decoration: line-through;
+    }
+  }
+}
+
+@mixin circle-check() {
+  width: $circle-check-size;
+  height: $circle-check-size;
+  background-color: $theme-color-green;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+}

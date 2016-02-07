@@ -39,10 +39,6 @@ module.exports = function(grunt){
             sass: {
                 files: '**/*.scss',
                 tasks: ['sass', 'postcss']
-            },
-            uglify: {
-                files: ['js/plugins/*.js', 'js/core.js'],
-                tasks: ['uglify']
             }
         },
         connect: {
@@ -59,6 +55,6 @@ module.exports = function(grunt){
         }
     });
 
-    grunt.registerTask('default', ['sass', 'postcss', 'uglify', 'connect', 'watch']);
+    grunt.registerTask('default', ['sass', 'postcss', 'connect', 'watch']);
 
 };

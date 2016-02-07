@@ -4,4 +4,10 @@
 
 $(document).ready(function() {
     $('.product-thumbnails-item-link').productImg();
+
+    $('[data-productcta]').productCta();
+
+    $('[data-modal]').modal();
+
+    $('[data-tabs]').tabs();
 });

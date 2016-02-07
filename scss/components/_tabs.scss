@@ -1,0 +1,110 @@
+@import "../settings/vars";
+@import "../settings/mixins";
+
+$tabs-nav-bg-color: #eeeeee !default;
+$tabs-nav-link-padding: 10px !default;
+
+.tabs {
+  &__nav {
+    display: none;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 14px;
+    display: block;
+    padding: 20px $tabs-nav-link-padding;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+
+    &.tabs-link-active {
+      background-color: white;
+    }
+
+    &--accordion {
+      background-color: white;
+      border-top: 2px solid $theme-color-border;
+      border-right: 2px solid $theme-color-border;
+      border-left: 2px solid $theme-color-border;
+
+      &:last-of-type {
+        border-bottom: 2px solid $theme-color-border;
+      }
+
+      &:after {
+        content: "+";
+        font-size: 24px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        font-weight: bold;
+        right: $tabs-nav-link-padding;
+      }
+
+      &.tabs-link-active {
+        &:after {
+          content: "-";
+        }
+      }
+    }
+  }
+
+
+
+  &__content {
+    background: white;
+    display: none;
+    padding: $tabs-nav-link-padding;
+    border-top: 2px solid $theme-color-border;
+    border-left: 2px solid $theme-color-border;
+    border-right: 2px solid $theme-color-border;
+
+    &:last-of-type {
+      border-top: none;
+      border-bottom: 2px solid $theme-color-border;
+    }
+  }
+}
+
+//========================================================================================
+//Breakpoint small
+//========================================================================================
+@include breakpoint(sm) {
+  .tabs {
+    &__nav {
+      display: block;
+      padding: ($tabs-nav-link-padding + 10px) ($tabs-nav-link-padding + 10px) 0;
+      background-color: $tabs-nav-bg-color;
+      overflow: hidden;
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__item {
+      display: block;
+      float: left;
+    }
+
+    &__link {
+      padding: 20px;
+
+      &--accordion {
+        display: none;
+      }
+    }
+
+    &__content {
+      padding: $tabs-nav-link-padding + 10px;
+      border: none;
+    }
+  }
+}

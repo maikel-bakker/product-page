@@ -1,5 +1,5 @@
-@import "../core/vars";
-@import "../core/mixins";
+@import "../settings/vars";
+@import "../settings/mixins";
 
 .container {
   @include container();

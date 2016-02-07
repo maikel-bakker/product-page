@@ -11,7 +11,43 @@
     <body>
         <div class="site-container">
             <header class="site-header">
-                header
+                <div class="site-header__top"></div>
+                <div class="site-header__main">
+                    <a class="site-header__mobile-menu-btn">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="site-header__middle">
+                        <h1 class="site-header__title">MouseShop</h1>
+                        <ul class="site-header-right">
+                            <li class="site-header-right__item site-header-search">
+                                <form>
+                                    <input type="text" class="site-header-search__input" placeholder="Zoeken..."/>
+                                    <i class="fa fa-search site-header-search__icon"></i>
+                                </form>
+                            </li>
+                            <li class="site-header-right__item site-header-cart">
+                                <a class="site-header-cart-btn">
+                                    <i class="fa fa-shopping-cart site-header-cart-btn__icon"></i>
+                                    <span class="site-header-cart-btn__title">Winkelwagentje (0)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="site-header-nav">
+                        <ul class="site-header-nav__list">
+                            <li class="site-header-nav__item">
+                                <a class="site-header-nav__link">Producten</a>
+                            </li>
+                            <li class="site-header-nav__item">
+                                <a class="site-header-nav__link">Over Ons</a>
+                            </li>
+                            <li class="site-header-nav__item">
+                                <a class="site-header-nav__link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
             </header>
             <nav class="breadcrumbs">
                 <ol class="breadcrumbs__list">
@@ -37,7 +73,7 @@
                             <h2 class="product__subtitle">Drie jaar lang energie met één set batterijen!</h2>
                         </hgroup>
                     </header>
-                    <section class="product__images">
+                    <div class="product__images">
                         <div class="product-image-big">
                             <figure class="product-image-big__figure">
                                 <img class="product-image-big__img" data-productimg-target src="https://s.s-bol.com/imgbase0/imagebase3/large/FC/8/5/2/4/1003004007494258.jpg" alt="Logitech M705 - Draadloze Marathon Muis"/>
@@ -73,41 +109,235 @@
                                 </a>
                             </li>
                         </ul>
-                    </section>
-                    <section class="product__details">
-                        <div class="product__price-box">
-                            <span class="product__price">€ 29,00</span>
-                            <span class="product__price product__price--sale">€ 49,00</span>
+                    </div>
+                    <div class="product__details">
+                        <div class="product-price-box">
+                            <span class="product-price-box__price">€ 29,00</span>
+                            <span class="product-price-box__price product-price-box__price--sale">€ 49,00</span>
                         </div>
                         <p class="product__delivery">Vandaag voor 23:00 uur besteld, morgen in huis </p>
-                        <details>
-                            <summary>Eindeloos doorgaan met een draadloze muis die tot drie jaar werkt op 1 set batterijen. Geen gedoe, hoge kosten en verspilling meer omdat u telkens nieuwe batterijen nodig heeft. U kunt de kleine, draadloze Logitech Unifying-ontvanger in uw notebook laten zitten en apparaten toevoegen wanneer u die nodig hebt. Supersnel scrollen: 1 keer draaien en u wilt nooit meer een gewoon scrollwiel.</summary>
-                            <ul>
-                                <li>Gratis verzending</li>
-                                <li>30 dagen bedenktijd en gratis retourneren</li>
-                                <li><strong>Vandaag Ophalen</strong></li>
-                                <li>Kan ook 's avonds thuisbezorgd worden</li>
-                                <li>Ophalen bij een afhaalpunt mogelijk</li>
+                        <span class="product__number">Artikelnummer: 910-001949</span>
+                        <p>
+                            Eindeloos doorgaan met een draadloze muis die tot drie jaar werkt op 1 set batterijen. Geen gedoe, hoge kosten en verspilling meer omdat u telkens nieuwe batterijen nodig heeft. U kunt de kleine, draadloze Logitech Unifying-ontvanger in uw notebook laten zitten en apparaten toevoegen wanneer u die nodig hebt. Supersnel scrollen: 1 keer draaien en u wilt nooit meer een gewoon scrollwiel.
+                            <ul class="product-usp">
+                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>Gratis verzending</span></li>
+                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>30 dagen bedenktijd en gratis retourneren</span></li>
+                                <li class="product-usp__item"><i class="fa fa-check"></i> <span><strong>Vandaag Ophalen</strong></span></li>
+                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>Kan ook 's avonds thuisbezorgd worden</span></li>
+                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>Ophalen bij een afhaalpunt mogelijk</span></li>
                             </ul>
-                        </details>
-
-                        <div class="product__quantity">
-                            <a class="product__quantity-btn product__quantity-btn--min">-</a>
-                            <input class="product__quantity-input" type="number" name="product-quantity" pattern="\d*" />
-                            <a class="product__quantity-btn product__quantity-btn--plus">+</a>
+                        </p>
+                        <div class="product__cta" data-productcta>
+                            <div class="product-quantity">
+                                <a class="product-quantity__btn product-quantity__btn--min" data-productcta-quantity-btn="min">-</a>
+                                <input class="product-quantity__input" type="number" value="1" name="product-quantity" pattern="\d*" data-productcta-quantity-input />
+                                <a class="product-quantity__btn product-quantity__btn--plus" data-productcta-quantity-btn="plus">+</a>
+                                <div class="product-quantity-tooltip">
+                                    <div class="product-quantity-tooltip__inner">
+                                        Selecteer een aantal
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-add-to-cart">
+                                <button class="product-add-to-cart-btn" type="submit" data-productcta-add-btn data-modal="#modal-add-to-cart">
+                                    <i class="fa fa-cart-plus product-add-to-cart-btn__icon"></i>
+                                    <span class="product-add-to-cart-btn__title">Winkelwagentje</span>
+                                </button>
+                            </div>
                         </div>
-                        <button class="product__add-to-cart" type="submit">
-                            <span>+</span>
-                            <span>Winkelwagentje</span>
-                        </button>
-                    </section>
+                    </div>
+                </section>
+                <section class="tabs product-specs" data-tabs>
+                    <nav class="tabs__nav">
+                        <ul class="tabs__list">
+                            <li class="tabs__item">
+                                <a class="tabs__link tabs-link-active" data-tabs-link href="#omschrijving">Omschrijving</a>
+                            </li>
+                            <li class="tabs__item">
+                                <a class="tabs__link" data-tabs-link href="#specificaties">Specificaties</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <a class="tabs__link tabs__link--accordion tabs-link-active" data-tabs-link="accordion" href="#omschrijving">Omschrijving</a>
+                    <div class="tabs__content product-specs__content" id="omschrijving" data-tabs-content>
+
+                        <h3>Omschrijving Logitech Wireless Mouse M705</h3>
+                        <p>
+                            Steek de USB nano ontvanger in je laptop of PC en je kan drie jaar gebruik blijven maken van de Logitech Wireless Mouse M705. De laser technologie van de Logitech Wireless Mouse M705 maakt het mogelijk om deze muis op vrijwel iedere ondergrond te gebruiken. Met de extra knoppen voeg je naar eigen invulling opties toe aan je muis, zo werk je sneller en bespaar je tijd.
+                        </p>
+
+                        <h3>Standaard meegeleverd</h3>
+                        <ul>
+                            <li>Logitech Wireless Mouse M705 </li>
+                            <li>USB nano ontvanger</li>
+                            <li>2 AA batterijen </li>
+                            <li>Handleiding</li>
+                        </ul>
+                    </div>
+                    <a class="tabs__link tabs__link--accordion" data-tabs-link="accordion" href="#specificaties">Specificaties</a>
+                    <div class="tabs__content product-specs__content" id="specificaties" data-tabs-content>
+                        <table class="product-specs-table">
+                            <thead>
+                                <tr>
+                                    <th class="product-specs-table__heading">Aansluitingen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product-specs-table__title">Verbinding met pc</td>
+                                    <td class="product-specs-table__text">USB 2.0</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Toetsenbordverbinding</td>
+                                    <td class="product-specs-table__text">Radio(RF)</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Draadloze verbinding </td>
+                                    <td class="product-specs-table__text">Ja</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Aantal usb 2.0-poorten</td>
+                                    <td class="product-specs-table__text">1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="product-specs-table">
+                            <thead>
+                                <tr>
+                                    <th class="product-specs-table__heading">Geïntegreerde opties</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product-specs-table__title">Muis-productopties</td>
+                                    <td class="product-specs-table__text">Side-scroll, Scroll-button </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="product-specs-table">
+                            <thead>
+                                <tr>
+                                    <th class="product-specs-table__heading">Product specificaties</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product-specs-table__title">Muis-productopties</td>
+                                    <td class="product-specs-table__text">Radio(RF)</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Muis technologie </td>
+                                    <td class="product-specs-table__text">Optisch</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Muisvorm</td>
+                                    <td class="product-specs-table__text">Ergonomisch</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Rechts- of linkshandig</td>
+                                    <td class="product-specs-table__text">Rechtshandig</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Aantal muisknoppen </td>
+                                    <td class="product-specs-table__text">4 knoppen</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Aan/uit-schakelaar</td>
+                                    <td class="product-specs-table__text">Ja</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Verpakking</td>
+                                    <td class="product-specs-table__text">Box</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Voedingstype</td>
+                                    <td class="product-specs-table__text"> Batterij </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="product-specs-table">
+                            <thead>
+                                <tr>
+                                    <th class="product-specs-table__heading">Systeemvereisten</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product-specs-table__title">Platform</td>
+                                    <td class="product-specs-table__text">PC-Software</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-specs-table__title">Systeemvereisten</td>
+                                    <td class="product-specs-table__text">Windows XP, Windows Vista, Windows 7,Windows 8, Windows 10, Mac OS X v10.5+, Chrome OS™, Linux 2.6+| USB vereist </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 </section>
             </div>
             <footer class="site-footer">
                 footer
             </footer>
+
+            <script type="text/template" id="modal-template">
+                <div class="modal" data-modal="open">
+                    <div class="modal__wrapper">
+                        <div class="modal__inner">
+                            <div class="modal-block" data-modal="block">
+                                <button class="modal-block__close" data-modal="close">&times;</button>
+                                {{content}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+
+            <script type="text/template" id="modal-add-to-cart">
+                <div class="modal-block__content">
+                    <h3 class="modal-block__title">
+                        <i class="fa fa-check modal-block__check"></i>
+                        Product is toegevoegd aan uw winkelwagentje!
+                    </h3>
+                    <div class="modal-product">
+                        <div class="modal-product__img">
+                            <img src="https://s.s-bol.com/imgbase0/imagebase3/large/FC/8/5/2/4/1003004007494258.jpg" alt="Logitech M705 - Draadloze Marathon Muis"/>
+                        </div>
+                        <div class="modal-product__details">
+                            <h4 class="modal-product__title">
+                                Logitech M705 - Draadloze Marathon Muis
+                            </h4>
+                            <p class="modal-product__delivery">Vandaag voor 23:00 uur besteld, morgen in huis </p>
+                            <div class="modal-product-price-box">
+                                <span class="modal-product-price-box__price">€ 29,00</span>
+                                <span class="modal-product-price-box__price modal-product-price-box__price--sale">€ 49,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-block__buttons">
+                        <button class="modal-block__btn modal-block__btn--cancel" data-modal="close">Verder winkelen</button>
+                        <button class="modal-block__btn modal-block__btn--confirm">
+                            <i class="fa fa-shopping-cart product-add-to-cart-btn__icon"></i>
+                            <span class="product-add-to-cart-btn__title">Naar bestellen</span>
+                        </button>
+                    </div>
+                </div>
+            </script>
+
+
         </div>
+        <script src="js/plugins/modernizr.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/plugins/jquery.productimg.js"></script>
+        <script src="js/plugins/jquery.productCta.js"></script>
+        <script src="js/plugins/jquery.modal.js"></script>
+        <script src="js/plugins/jquery.tabs.js"></script>
+        <script src="js/core.js"></script>
     </body>
 </html>

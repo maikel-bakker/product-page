@@ -1,5 +1,5 @@
-@import "../core/vars";
-@import "../core/mixins";
+@import "../settings/vars";
+@import "../settings/mixins";
 
 .breadcrumbs {
   @include container();
@@ -45,7 +45,22 @@
     }
 
     &--active {
-      color: $theme-color-orange;
+      color: $theme-color-red;
+    }
+  }
+}
+
+//========================================================================================
+//Breakpoint small
+//========================================================================================
+@include breakpoint(sm) {
+  .breadcrumbs {
+    &__list {
+      padding: 15px 0;
+    }
+    &__item {
+      font-size: 14px;
+      max-width: 200px;
     }
   }
 }
