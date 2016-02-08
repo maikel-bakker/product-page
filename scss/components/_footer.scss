@@ -1,4 +1,81 @@
+@import "../settings/vars";
+@import "../settings/mixins";
+
 .site-footer {
-  height: 300px;
-  background-color: #ccc;
+  background-color: $theme-color-navy;
+  padding: 20px 0 0;
+  color: white;
+
+  &__bottom {
+    padding: 15px 0;
+    color: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $theme-color-red;
+    margin-top: 20px;
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__row {
+    @include row();
+  }
+
+  &__col {
+    @include col-12();
+  }
+
+  &__col + &__col {
+    margin-top: 20px;
+  }
+
+  &__title {
+    margin: 0 0 5px;
+    color: inherit;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 2em;
+    a {
+      color: rgba(white, 0.8);
+      text-decoration: none;
+
+      &:hover {
+        color: $theme-color-red;
+      }
+    }
+  }
+}
+
+//========================================================================================
+//Breakpoint small
+//========================================================================================
+@include breakpoint(sm) {
+  .site-footer {
+    margin-top: 40px;
+    padding: 40px 0 0;
+
+    &__bottom {
+      margin-top: 40px;
+    }
+
+    &__col {
+      @include col-3();
+    }
+
+    &__col + &__col {
+      margin-top: 0;
+    }
+  }
 }

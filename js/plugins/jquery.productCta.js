@@ -95,7 +95,6 @@
             else {
                 $addBtn.attr('disabled', false);
                 $(productCta.element).find(tooltipSelector).removeClass(tooltipShowClass);
-                console.log($(productCta.element).find(tooltipSelector).length);
             }
         }
     };

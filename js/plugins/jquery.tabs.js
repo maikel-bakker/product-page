@@ -101,7 +101,7 @@
         },
 
         showTab: function(target, isPopState) {
-            $(target).fadeIn(300);
+            $('[' + tabs.settings.contentSelector + '="'+ target +'"]').show();
 
             if (!isPopState) {
                 tabs.historyPushState(target);
@@ -109,12 +109,8 @@
 
         },
 
-        toggleTab: function(target) {
-            $(target).fadeToggle(300);
-        },
-
         hideTab: function(target) {
-            $(target).hide();
+            $('[' + tabs.settings.contentSelector + '="'+ target +'"]').hide();
         },
 
         hideAllTabs: function() {
@@ -124,10 +120,10 @@
         setActive: function() {
 
             //Check the active tab (set by the showTab function)
-            var activeTab = '#' + $(tabsContent+':visible').attr('id'),
+            var activeTab = $(tabsContent+':visible').attr(tabs.settings.contentSelector),
 
             //Target the link corresponding to the active tab
-                $target = $(tabsLink + '[href="' + activeTab + '"]');
+            $target = $(tabsLink + '[href="' + activeTab + '"]');
 
             //Set the active css class
             $target.addClass(linkActiveClass);

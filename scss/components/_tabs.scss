@@ -105,6 +105,10 @@ $tabs-nav-link-padding: 10px !default;
     &__content {
       padding: $tabs-nav-link-padding + 10px;
       border: none;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
     }
   }
 }

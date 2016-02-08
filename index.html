@@ -1,11 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="nl">
+<!--[if IE 8 ]> <html class="no-js lt-ie9 ie8" lang="nl"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js lt-ie10 ie9" lang="nl"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html class="no-js" lang="nl"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Product Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js/plugins/modernizr-2.8.3.min.js"></script>
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
@@ -17,7 +20,7 @@
                         <i class="fa fa-bars"></i>
                     </a>
                     <div class="site-header__middle">
-                        <h1 class="site-header__title">MouseShop</h1>
+                        <h2 class="site-header__title">MouseShop</h2>
                         <ul class="site-header-right">
                             <li class="site-header-right__item site-header-search">
                                 <form>
@@ -68,10 +71,8 @@
             <div class="product">
                 <section class="product__card">
                     <header class="product__header">
-                        <hgroup>
-                            <h1 class="product__title">Logitech M705 - Draadloze Marathon Muis</h1>
-                            <h2 class="product__subtitle">Drie jaar lang energie met één set batterijen!</h2>
-                        </hgroup>
+                        <h1 class="product__title">Logitech M705 - Draadloze Marathon Muis</h1>
+                        <h2 class="product__subtitle">Drie jaar lang energie met één set batterijen!</h2>
                     </header>
                     <div class="product__images">
                         <div class="product-image-big">
@@ -119,18 +120,18 @@
                         <span class="product__number">Artikelnummer: 910-001949</span>
                         <p>
                             Eindeloos doorgaan met een draadloze muis die tot drie jaar werkt op 1 set batterijen. Geen gedoe, hoge kosten en verspilling meer omdat u telkens nieuwe batterijen nodig heeft. U kunt de kleine, draadloze Logitech Unifying-ontvanger in uw notebook laten zitten en apparaten toevoegen wanneer u die nodig hebt. Supersnel scrollen: 1 keer draaien en u wilt nooit meer een gewoon scrollwiel.
-                            <ul class="product-usp">
-                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>Gratis verzending</span></li>
-                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>30 dagen bedenktijd en gratis retourneren</span></li>
-                                <li class="product-usp__item"><i class="fa fa-check"></i> <span><strong>Vandaag Ophalen</strong></span></li>
-                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>Kan ook 's avonds thuisbezorgd worden</span></li>
-                                <li class="product-usp__item"><i class="fa fa-check"></i> <span>Ophalen bij een afhaalpunt mogelijk</span></li>
-                            </ul>
                         </p>
+                        <ul class="product-usp">
+                            <li class="product-usp__item"><i class="fa fa-check"></i> <span>Gratis verzending</span></li>
+                            <li class="product-usp__item"><i class="fa fa-check"></i> <span>30 dagen bedenktijd en gratis retourneren</span></li>
+                            <li class="product-usp__item"><i class="fa fa-check"></i> <span><strong>Vandaag Ophalen</strong></span></li>
+                            <li class="product-usp__item"><i class="fa fa-check"></i> <span>Kan ook 's avonds thuisbezorgd worden</span></li>
+                            <li class="product-usp__item"><i class="fa fa-check"></i> <span>Ophalen bij een afhaalpunt mogelijk</span></li>
+                        </ul>
                         <div class="product__cta" data-productcta>
                             <div class="product-quantity">
                                 <a class="product-quantity__btn product-quantity__btn--min" data-productcta-quantity-btn="min">-</a>
-                                <input class="product-quantity__input" type="number" value="1" name="product-quantity" pattern="\d*" data-productcta-quantity-input />
+                                <input class="product-quantity__input" type="text" value="1" name="product-quantity" pattern="\d*" data-productcta-quantity-input />
                                 <a class="product-quantity__btn product-quantity__btn--plus" data-productcta-quantity-btn="plus">+</a>
                                 <div class="product-quantity-tooltip">
                                     <div class="product-quantity-tooltip__inner">
@@ -147,7 +148,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="tabs product-specs" data-tabs>
+                <div class="tabs product-specs" data-tabs>
                     <nav class="tabs__nav">
                         <ul class="tabs__list">
                             <li class="tabs__item">
@@ -160,7 +161,7 @@
                         </ul>
                     </nav>
                     <a class="tabs__link tabs__link--accordion tabs-link-active" data-tabs-link="accordion" href="#omschrijving">Omschrijving</a>
-                    <div class="tabs__content product-specs__content" id="omschrijving" data-tabs-content>
+                    <div class="tabs__content product-specs__content" data-tabs-content="#omschrijving">
 
                         <h3>Omschrijving Logitech Wireless Mouse M705</h3>
                         <p>
@@ -176,11 +177,11 @@
                         </ul>
                     </div>
                     <a class="tabs__link tabs__link--accordion" data-tabs-link="accordion" href="#specificaties">Specificaties</a>
-                    <div class="tabs__content product-specs__content" id="specificaties" data-tabs-content>
+                    <div class="tabs__content product-specs__content" data-tabs-content="#specificaties">
                         <table class="product-specs-table">
                             <thead>
                                 <tr>
-                                    <th class="product-specs-table__heading">Aansluitingen</th>
+                                    <th colspan="2" class="product-specs-table__heading">Aansluitingen</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -206,7 +207,7 @@
                         <table class="product-specs-table">
                             <thead>
                                 <tr>
-                                    <th class="product-specs-table__heading">Geïntegreerde opties</th>
+                                    <th colspan="2" class="product-specs-table__heading">Geïntegreerde opties</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -220,7 +221,7 @@
                         <table class="product-specs-table">
                             <thead>
                                 <tr>
-                                    <th class="product-specs-table__heading">Product specificaties</th>
+                                    <th colspan="2" class="product-specs-table__heading">Product specificaties</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -262,7 +263,7 @@
                         <table class="product-specs-table">
                             <thead>
                                 <tr>
-                                    <th class="product-specs-table__heading">Systeemvereisten</th>
+                                    <th colspan="2" class="product-specs-table__heading">Systeemvereisten</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -279,10 +280,97 @@
                         </table>
                     </div>
 
-                </section>
+                </div>
             </div>
+
             <footer class="site-footer">
-                footer
+                <div class="site-footer__container">
+                    <div class="site-footer__row">
+                        <div class="site-footer__col">
+                            <h4 class="site-footer__title">Klantenservice</h4>
+                            <ul class="site-footer__list">
+                                <li class="site-footer__item">
+                                    <a href="#">Contact</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Bestellen & levering</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Betalen</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Retourneren</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Andere vragen</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site-footer__col">
+                            <h4 class="site-footer__title">Winkels</h4>
+                            <ul class="site-footer__list">
+                                <li class="site-footer__item">
+                                    <a href="#">Amsterdam</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Rotterdam</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Eindhoven</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Utrecht</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Amersfoort</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site-footer__col">
+                            <h4 class="site-footer__title">Over MouseShop</h4>
+                            <ul class="site-footer__list">
+                                <li class="site-footer__item">
+                                    <a href="#">Ons assortiment</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Nieuws</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Cadeaubonnen</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Development jobs</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="#">Werken bij MouseShop</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site-footer__col">
+                            <h4 class="site-footer__title">Contact</h4>
+                            <ul class="site-footer__list">
+                                <li class="site-footer__item">
+                                    MouseShop B.V.
+                                </li>
+                                <li class="site-footer__item">
+                                    Soesterweg 110
+                                </li>
+                                <li class="site-footer__item">
+                                    3812BC Amersfoort
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="tel:+31623189344">+31(0)6-231-89-344</a>
+                                </li>
+                                <li class="site-footer__item">
+                                    <a href="mailto:info@mouseshop.nl">info@mouseshop.nl</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    &copy;2016 Maikel Bakker
+                </div>
             </footer>
 
             <script type="text/template" id="modal-template">
@@ -332,7 +420,6 @@
 
 
         </div>
-        <script src="js/plugins/modernizr.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="js/plugins/jquery.productimg.js"></script>
         <script src="js/plugins/jquery.productCta.js"></script>
